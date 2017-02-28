@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Management Page">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/syllabusStep/baseStyle.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="manage.html">Management</a></li>
+            <li><a href="contactLib.html">Contact Library</a></li>
+            <li><a href="textbookLib.html">Textbook Library</a></li>
+            <li><a href="policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a>Welcome, {{ session['username'] }}!</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="backgroundHolder manageBackground">
+
+    <div class="borderedHolder solidBackground manageBox leftText">
+        <h1 class="centeredText">Current Syllabus</h1>
+        <table class="table">
+            <!-- still debating div or regular tables -->
+            <tr>
+                <th>Syllabus Name</th>
+                <th>Date Last Edited</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            {% for x in range(l1Length) %}
+                <tr>
+                    <td> {{ l1[x].name }} </td>
+                    <td>0/0/2015</td>
+                    <td>
+                        {% if l1[x].active == false %}
+                            Inactive
+                        {% endif %}
+                        {% if l1[x].active == true %}
+                            Active
+                        {% endif %}
+                    </td>
+                    <td>
+                        <form action="syllabusStepCompletion.html" method="post">
+                            <button type="submit" name="edit" class="btn btn-default" value="{{ l1[x].name }}">Edit
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        {% if l1[x].active %}
+                            <form action="{{ l1[x].getLink() }}" method="get">
+                                <button type="submit" class="btn btn-default">View</button>
+                            </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <form action="manage.html" method="post">
+                            <button type="submit" class="btn btn-default" name="delete" value="{{ x }}">
+                                <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <form action="manage.html" method="post">
+                    <td>
+                        <input placeholder="New Syllabus Name" class="form-control" required name="syllabusName">
+                    </td>
+                    <td>
+                        <input class="btn btn-block btn-default" value="Add a Syllabus" type="submit"/>
+                    </td>
+                </form>
+            </tr>
+
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

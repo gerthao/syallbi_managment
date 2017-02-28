@@ -1,0 +1,101 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Confirm Your Syllabus{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <br>
+
+    <h1 class="text-left">Assessments</h1>
+    <table class="table">
+        <tr class="header">
+            <th class="text-center">Type</th>
+            <th class="text-center">Percentage</th>
+            <th class="text-center">Description</th>
+            <th></th>
+            <th>
+                <form>
+                    <button class="btn btn-block btn-default">
+                        <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                        From library
+                    </button>
+                </form>
+            </th>
+        </tr>
+
+        {% for x in range(l1length) %}
+        <tr class = "header{{ l1[x].name }}">
+        {% if x != editIndex%}
+            <td> {{ l1[x].name }} </td>
+            <td> {{ l1[x].percent }} </td>
+            <td> {{ l1[x].description }} </td>
+            <td>
+                <form action ="/syllabusStepAssessment.html" method="post">
+                    <button type="submit" class="btn btn-default" name="edit" value="{{ x }}">
+                        Edit
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action ="/syllabusStepAssessment.html" method="post">
+                    <button type="submit" class="btn btn-default" name="delete" value="{{ x }}">
+                        <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                        Remove
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+            <form action="/syllabusStepAssessment.html" method="post" id="form1">
+            <input type="hidden" name="saveEdit" value="{{ x }}">
+            <td><input type="text" id="name" name="assessmentName" class="form-control" value="{{l1[x].name}}"></td>
+            <td><input type="text" id="percent" name="assessmentPercent" class="form-control" value="{{ l1[x].percent }}"></td>
+            <td><textarea type="text" id="description" name="assessmentDescription" class="form-control">{{ l1[x].description }}</textarea></td>
+            <td>
+                <button type="submit" class="btn btn-default">
+                    <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                        Save
+                    </button>
+            </td>
+            </form>
+            <td>
+                <form action ="/syllabusStepAssessment.html" method="post">
+                    <button type="submit" class="btn btn-default" name="delete" value="{{ x }}">
+                        <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                        Remove
+                    </button>
+                </form>
+            </td>
+        {% endif %}
+        {% endfor %}
+
+        <tr>
+            <form action="/syllabusStepAssessment.html" method="post" id="form1">
+            <td><input type="text" id="name" name="assessmentName" class="form-control" placeholder="Name"></td>
+            <td><input type="text" id="percent" name="assessmentPercent" class="form-control" placeholder="Percent"></td>
+            <td><textarea type="text" id="description" name="assessmentDescription" class="form-control" placeholder="Description"></textarea></td>
+            <td>
+                <button type="submit" class="btn btn-default">
+                    <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                        Save Type
+                    </button>
+            </td>
+            </form>
+        </tr>
+    </table>
+
+    <form action="syllabusStepGradeScale.html" class="completionForm">
+        <button class="btn btn-default btn-block">Continue</button>
+    </form>
+
+    <form action="syllabusStepTextbookSelection.html" class="completionForm">
+        <button id="goBack" class="btn btn-block btn-default" type="submit">
+            <img class="addRemButton" src="../content/icons/backIcon.png">
+            Go Back
+        </button>
+    </form>
+
+{% endblock %}

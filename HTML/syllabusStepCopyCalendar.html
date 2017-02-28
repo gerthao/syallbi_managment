@@ -1,0 +1,26 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Pick a Calendar to Copy{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="centeredText">Select Calendar to Copy</h1>
+
+    <table class="table">
+        {% for c in calendars %}
+            <tr>
+                <td>
+                    {{ c }}
+                </td>
+                <td>
+                    <form method="post" action="/copyCalendar?source={{ c }}">
+                        <input class="btn btn-default" value="Select" type="submit">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

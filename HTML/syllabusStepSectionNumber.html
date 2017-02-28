@@ -1,0 +1,29 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Confirm Your Syllabus{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="col-md-12 text-center">Input your course information</h1>
+
+<form action="/syllabusStepSectionNumber.html" method="post">
+    <div class="col-sm-12 text-center">
+        <div>Section Number</div>
+        <label>
+            <select name="section-number">
+                <option value="001">001</option>
+                <option value="002">002</option>
+                <option value="003">003</option>
+                <option value="004">004</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-sm-12 text-center">
+        <input class="btn btn-default btn-block marginOverride" type="submit" value="Save and Continue">
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% set active_page = 'policyLib' %}
+{% extends "masterLib.html" %}
+{% block title %}Policy Setup{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../css/lib/policyLib.css">
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="centeredText">Policy Library</h1>
+    {% if editMode %}
+
+        <form method="post" action="/editPolicy?oldPolicyHead={{ oldPolicyHeader }}" class="form-group">
+            <input disabled placeholder="Header" class="form-control" value="{{ oldPolicyHeader }}" required/>
+            <textarea placeholder="Body" class="form-control" name="newPolicyBody" rows="2"
+                      required>{{ oldPolicyBody }}</textarea>
+            <input class="btn btn-default btn-block" type="submit" value="Save"/>
+        </form>
+
+    {% else %}
+        <h3 class="sectionHeader">Make Changes to Existing Policies</h3>
+        <table class="table table-striped leftText">
+            <thead>
+                <th>Title</th>
+                <th>Updated On</th>
+                <th></th>
+                <th></th>
+            </thead>
+            {% for i in policies %}
+                <tr>
+                    <td>{{ i.head }}</td>
+                    <td>{{ i.updatedOn }}</td>
+                    <td>
+                        <form method="get" action="/editPolicy">
+                            <input hidden name="oldPolicyHead" value="{{ i.head }}"/>
+                            <input class="btn btn-block btn-default" type="submit" value="Edit Policy"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="/deletePolicy?source=/policyLib.html&policyHead={{ i.head }}">
+                            <input class="btn btn-block btn-default" type="submit" value="Delete Policy"/>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h3 class="sectionHeader">Make a New Policy</h3>
+        <form action="/policyLib.html" method="post" class="centeredText form-group">
+            <input placeholder="New Policy Header" class="form-control" required name="newPolicyHeader"/>
+            <textarea placeholder="New Policy Body" class="form-control" name="newPolicyBody" rows="2"
+                      required></textarea>
+            <input class="btn btn-default btn-block" type="submit" value="Save New Policy">
+        </form>
+    {% endif %}
+
+{% endblock %}

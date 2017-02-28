@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="manage.html">Management</a></li>
+            <li><a href="contactLib.html">Contact Library</a></li>
+            <li><a href="textbookLib.html">Textbook Library</a></li>
+            <li><a href="policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a>Welcome, {{ session['username'] }}!</a></li>
+            <li><a href="/">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+    <div class="borderedHolder solidBackground centeredText stepContainer">
+        <div id="yourContentHere">
+            {% block content %}{% endblock %}
+
+            <div class="progressBar centeredText">
+                <!-- This will eventually use templating to be populated -->
+                {% for i in range(0,progress) %}
+                    <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+                {% endfor %}
+                {% for i in range(0,8 - progress) %}
+                    <img class="barIcon" src="../content/progressbarsample/empty.png">
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

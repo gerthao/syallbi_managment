@@ -1,0 +1,97 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Textbook Selection{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <h1>Textbook Selection</h1>
+        {% if course %}
+            <h2>Course: {{ course.department }}
+                {{ course.course_number }}
+                Section: {{section }}
+            </h2>
+        {% endif %}
+    </div>
+    <div>
+        <br>
+        <table class="table table-striped leftText">
+            <tbody>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Publisher</th>
+                <th>Edition</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% if length == 0 %}
+                <tr>
+                    <td>No textbooks have been added</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                <tr>
+            {% else %}
+              {% for book in l1 %}
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.ISBN}}</td>
+                    <td>{{book.publisher}}</td>
+                    <td>{{ book.edition }}</td>
+                    <td>
+                        <form action ="/syllabusStepTextbookSelection.html" method="post">
+                            <button type="submit" class="btn btn-default" name="delete" value="{{ book }}">
+                                <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                                <input type="hidden" name="delete_title" value={{book.title}} />
+                                <input type="hidden" name="delete_author" value={{book.author}} />
+                                <input type="hidden" name="delete_ISBN" value={{book.ISBN}} />
+                                <input type="hidden" name="delete_date" value={{book.date}} />
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="#remove">
+                            <button class="btn btn-default" type="submit">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+              {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <form action="/syllabusStepTextbookSelection.html" class="" method="post" id="form1">
+        <input type="text" class="form-control" name="title" id="title" placeholder="Title" required>
+        <input type="text" class="form-control" name="author" id="author" placeholder="Author" required>
+        <input type="text" class="form-control" name="ISBN" id="ISBN" placeholder="ISBN" required>
+        <input type="text" class="form-control" name="publisher" id="publisher" placeholder="publisher" required>
+        <input type="text" class="form-control" name="edition" id="edition" placeholder="edition" required>
+        <button class="btn btn-default" type="submit">New Textbook</button>
+    </form>
+    <br>
+    <form action="/syllabusStepTextbookSelection.html" class="" method="search" id="form2">
+        <input type="text" class="form-control" name="search" id="search" placeholder="Search" required>
+        <button class="btn btn-default" type="submit">Search</button>
+    </form>
+    <form action="syllabusStepAssessment.html" class="completionForm">
+        <button class="btn btn-default btn-block">Save &amp Continue</button>
+    </form>
+
+    <form action="syllabusStepInstructor.html" class="completionForm">
+        <button id="goBack" class="btn btn-block btn-default" type="submit">
+            <img class="addRemButton" src="../content/icons/backIcon.png">
+            Go Back
+        </button>
+    </form>
+
+
+{% endblock %}

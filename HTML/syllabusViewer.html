@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Syllabus</title>
+    <link rel="stylesheet" href="../../../../css/viewer.css">
+</head>
+<body>
+<div class="pageContainer">
+
+    <h2 id="courseTitle">
+        {{ syllabus.course.department }} {{ syllabus.course.course_number }}-00{{ syllabus.course.section_number }}:
+        ClassNameHere {{ syllabus.term.term }} {{ syllabus.term.year }}
+    </h2>
+
+
+    <div class="instructorBox">
+        <table class="instructorTable">
+            <tr class="instructorHeaderRow">
+                <th class="instructorHeader">Instructor</th>
+                <th class="instructorHeader">Information</th>
+                <th class="instructorHeader">Office</th>
+            </tr>
+            {% for x in syllabus.Instructors %}
+                <tr class="instructorRow">
+                    <td class="instructorCell"> {{ x.name }} <br>
+                        {{ x.email }}@uwm.edu
+                    </td>
+                    <td class="instructorCell">{{ syllabus.course.department }} {{ syllabus.course.course_number }}-00{{ syllabus.course.section_number }}</td>
+                    <td class="instructorCell"> {{ x.officeLocation }} Phone: {{ x.phone }} <br>
+                        Office Hours: {{ x.officeHours }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        Assignments, lecture slides, and grades can be found in D2L: http://d2l.uwm.edu
+    </div>
+
+    <br/>
+
+    <div class="bookBox">
+        <div class="header">
+            Textbooks
+        </div>
+        <div class="books">
+            {% for x in syllabus.textbooks %}
+                <span class="bookTitle">{{ x.title }}</span>, <span class="bookAuthor">{{ x.author }}, </span>
+                <span class="bookEdition">{{ x.edition }} </span>, <span class="bookPublisher">{{ x.publisher }} </span>,
+                <span class="bookISBN"> ISBN: {{ x.ISBN }}</span> <br/>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <br/>
+
+    <div class="assessmentBox">
+        <div class="header">Assessments</div>
+        <table class="assessmentTable">
+            {% for x in syllabus.assessments %}
+                <tr class="header{{ x.name }}">
+                    <td class="assessmentCell"> {{ x.name }} <br/>
+                        {{ x.percent }} </td>
+                    <td class="assessmentCell"> {{ x.description }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="gradingScaleBox">
+        <table class="gradingScaleTable">
+
+            <tr>
+                {% for x in syllabus.gradeScale %}
+                    <td class="gradeScaleCell">{{ x.name }}<br/>
+                        {{ x.percentRange }}</td>
+                {% endfor %}
+            </tr>
+
+        </table>
+    </div>
+
+    <br/>
+
+    <div class="policyBox">
+        {% for x in policies %}
+            <div class="policyHeader"> {{ x.head }}</div>
+            <p class="policyBody">{{ x.body }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="calendarBox">
+        <table class="calendarTable">
+            <thead>
+            <tr>
+                <th class="calendarHeader">Date</th>
+                <th class="calendarHeader">Reading</th>
+                <th class="calendarHeader">Topics</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in calendar.entries %}
+                <tr>
+                    <td class="calendarCell">{{ i.date }}</td>
+                    <td class="calendarCell">{{ i.homework }}</td>
+                    <td class="calendarCell">{{ i.event }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

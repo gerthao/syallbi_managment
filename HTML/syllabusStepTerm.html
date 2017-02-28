@@ -1,0 +1,39 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Term Selection{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>Select Course Term</h1>
+
+    <div class="bottom-pad">
+        <form action="/syllabusStepTerm.html" method="post">
+            <div class="col-sm-6">
+                <h3>Year</h3>
+                <label><select name="year">
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                </select></label>
+            </div>
+            <div class="col-sm-6">
+                <h3>Term</h3>
+                <label><select name="term">
+                    <option value="winter">Winter</option>
+                    <option value="spring">Spring</option>
+                    <option value="summer">Summer</option>
+                    <option value="fall">Fall</option>
+                </select></label>
+            </div>
+            <div class="col-sm-12">
+                <input value="Next" type="submit" class="btn btn-block btn-default">
+            </div>
+        </form>
+    </div>
+    </div
+
+{% endblock %}

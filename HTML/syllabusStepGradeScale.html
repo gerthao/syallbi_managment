@@ -1,0 +1,93 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Course Grading Scale{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="centeredText">Course Grade Scale</h1>
+    <table class="table">
+        <tr>
+            <th>Grade</th>
+            <th>Percentage</th>
+            <th>Edit</th>
+        </tr>
+
+        {% for grade in grades|sort(attribute='name')  %}
+        <tr>
+            <td>{{grade.name}}</td>
+            <td>{{grade.percentRange}}</td>
+            <td><img class="addRemButton" src="../content/icons/editIcon.png"/></td>
+            <td>
+                <form action ="/syllabusStepGradeScale.html" method="post">
+                    <button type="submit" class="btn btn-default" name="delete" value="{{ grade }}">
+                        <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                        <input type="hidden" name="delete_name" value="{{grade.name}}" />
+                        <input type="hidden" name="delete_quantity" value={{grade.percentRange}} />
+                        Remove
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <table class="table">
+        <tr>
+            <th>Description:</th>
+            <th>
+            </th>
+        </tr>
+        <tr>
+            <td>Grades will be posted on D2l, and there will be no curve. However extra credit will be given to those
+                who attend a macro processor basket weaving class. In addition, all grading will be taken care of by the
+                TA.
+            </td>
+
+            <td>
+                <form action="#delete">
+                    <button class="btn btn-block btn-default">
+                        Edit
+                    </button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <table class="table">
+        <tr>
+            <th>Add New Grade</th>
+            <th>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <form action="/syllabusStepGradeScale.html" method="post" id="form1">
+                    <td><input type="text" id="name" name="gradeName" class="form-control" placeholder="Name"></td>
+                    <td><input type="text" id="percent" name="gradePercentageRange" class="form-control" placeholder="Percentage Range"></td>
+                    <td>
+                        <button type="submit" class="btn btn-default">
+                            <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                            Save
+                        </button>
+                    </td>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <form action="syllabusStepPoliciesEditor.html" class="completionForm">
+        <button class="btn btn-default btn-block">Save &amp Continue</button>
+    </form>
+
+    <form action="syllabusStepAssessment.html" class="completionForm">
+        <button id="goBack" class="btn btn-block btn-default" type="submit">
+            <img class="addRemButton" src="../content/icons/backIcon.png">
+            Go Back
+        </button>
+    </form>
+
+{% endblock %}

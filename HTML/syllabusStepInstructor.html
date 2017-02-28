@@ -1,0 +1,99 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Instructor Selection Step{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-left">Instructors Selection Page</h1>
+<table class="table">
+    <tr class="header">
+        <th class="text-center">Name</th>
+        <th class="text-center">Phone</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Office Location</th>
+        <th class="text-center">Office Hours</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+        {% for x in range(l1Length) %}
+        {% if editIndex != x %}
+        <tr class = "header{{ l1[x].name }}">
+            <td> {{ l1[x].name }} </td>
+            <td> {{ l1[x].phone }} </td>
+            <td> {{ l1[x].email }} </td>
+            <td> {{ l1[x].officeLocation }} </td>
+            <td> {{ l1[x].officeHours }} </td>
+            <td>
+                <form action ="/syllabusStepInstructor.html" method="post">
+                    <button type="submit" class="btn btn-default" name="edit" value="{{ x }}">
+                        Edit
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action ="/syllabusStepInstructor.html" method="post">
+                    <button type="submit" class="btn btn-default" name="remove" value="{{ x }}">
+                        Remove
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <form action="/syllabusStepInstructor.html" method="post">
+            <td><input type="text" id="name" name="name" class="form-control" value="{{ l1[x].name }}"></td>
+            <td><input type="text" id="phone" name="phone" class="form-control" value="{{ l1[x].phone }}"></td>
+            <td><input type="text" id="email" name="email" class="form-control" value="{{ l1[x].email }}"></td>
+            <td><input type="text" id="location" name="location" class="form-control" value="{{ l1[x].officeLocation }}"></td>
+            <td><input type="text" id="hours" name="hours" class="form-control" value="{{ l1[x].officeHours }}"></td>
+            <td>
+                <button type="submit" class="btn btn-default" name="saveEdit" value="{{ x }}">
+                    <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                        Save
+                    </button>
+            </td>
+            <td>
+                <form action ="/syllabusStepInstructor.html" method="post">
+                    <button type="submit" class="btn btn-default" name="remove" value="{{ x }}">
+                        Remove
+                    </button>
+                </form>
+            </td>
+            </form>
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+        <tr>
+            <form action="/syllabusStepInstructor.html" method="post" id="form1">
+            <td><input type="text" id="name" name="name" class="form-control" placeholder="Name"></td>
+            <td><input type="text" id="phone" name="phone" class="form-control" placeholder="Phone"></td>
+            <td><input type="text" id="email" name="email" class="form-control" placeholder="Email"></td>
+            <td><input type="text" id="location" name="location" class="form-control" placeholder="Location"></td>
+            <td><input type="text" id="hours" name="hours" class="form-control" placeholder="Hours"></td>
+            <td>
+                <button type="submit" class="btn btn-default">
+                    <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                        Save
+                    </button>
+            </td>
+            </form>
+        </tr>
+</table>
+
+<form action="syllabusStepTextbookSelection.html" class="completionForm">
+    <button class="btn btn-default btn-block">Save &amp Continue</button>
+</form>
+
+<form action="syllabusStepSectionNumber.html" class="completionForm">
+    <button id="goBack" class="btn btn-block btn-default" type="submit">
+        <img class="addRemButton" src="../content/icons/backIcon.png">
+        Go Back
+    </button>
+</form>
+
+{% endblock %}

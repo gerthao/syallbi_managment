@@ -1,0 +1,90 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Setup Your Policies{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="../css/syllabusStep/policyStyle.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Course Policies</h1>
+
+    <div class="leftText">
+
+        <div class="newBox">
+            <h3 class="centeredText">Attach a New Policy</h3>
+
+            <form action="#" method="post" id="testingForm">
+                <div class="form-inline policyHeader">
+                    Header
+                </div>
+                    <textarea class="form-control" rows="2" placeholder="A title for this policy" required
+                              form="testingForm" name="policyHeader"></textarea>
+
+                <div class="form-inline policyHeader">
+                    Body
+                </div>
+                    <textarea class="form-control" rows="4" placeholder="A description for this policy" required
+                              form="testingForm" name="policyBody"></textarea>
+                <input class="btn btn-default btn-block bottomButton" type="submit" value="Attach New Policy"/>
+            </form>
+        </div>
+
+        <div class="importBox">
+            <h3 class="centeredText">Attached to this Syllabus</h3>
+            {% if importedPolicies|length == 0 %}
+                <p>[No policies are attached.]</p>
+            {% endif %}
+            <table class="table">
+                {% for i in importedPolicies %}
+                    <tr>
+                        <td>{{ i.head }}</td>
+                        <td>
+                            <form method="post"
+                                  action="/delinkPolicy?policyHead={{ i.head }}&source=/syllabusStepPoliciesEditor.html">
+                                <input class="btn btn-default btn-block" value="Detach This Policy" type="submit"/>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <h3 class="centeredText">Attach Existing Policies</h3>
+
+            <form method="post" action="/linkPolicy">
+                <table class="table">
+                    {% if otherPolicies|length == 0 %}
+                        <p>[No policies available for import.]</p>
+                    {% endif %}
+                    {% for i in otherPolicies %}
+                        <tr>
+                            <td>
+                                {{ i.head }}
+                            </td>
+                            <td>
+                                <input type="checkbox" name="selectedImports" value="{{ i.head }}"/>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                <input class="btn btn-default btn-block" value="Attach Selected Policies" type="submit">
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="policyControl">
+        <!-- This action should redirect somewhere, but I don't know where yet.  -->
+        <form action="syllabusStepCalendar.html" class="completionForm">
+            <button class="btn btn-block btn-default">Save &amp Continue</button>
+        </form>
+
+        <!-- fill in this link eventually-->
+        <form action="syllabusStepGradeScale.html" class="completionForm">
+            <button id="goBack" class="btn btn-block btn-default" type="submit">
+                Go Back
+            </button>
+        </form>
+    </div>
+{% endblock %}

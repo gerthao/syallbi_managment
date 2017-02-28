@@ -1,0 +1,52 @@
+{% extends "masterLib.html" %}
+
+{% block title %}View Your Weekly Schedule{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../css/schedule.css">
+{% endblock %}
+
+{% block content %}
+
+    <table class="table table-bordered">
+
+
+        <caption class="centeredText">{{ month }}</caption>
+
+        <tr>
+            {% for day in days %}
+                <th>{{ day }}</th>
+            {% endfor %}
+        </tr>
+
+        <tr>
+
+            {% set rowLimiter = 0 %}
+            {% set dateIterator = 0 %}
+
+            {% for date in schedule %}
+
+                {% if rowLimiter >= entriesPerRow %}
+                    {% set rowLimiter = 0 %}
+                    </tr>
+                    <tr>
+                {% endif %}
+
+                <td class="col-md-2">
+                    <div class="height-limited">
+                        {{ dates[dateIterator] }} <br/>
+                        {% set dateIterator = dateIterator + 1 %}
+                        {% set rowLimiter = rowLimiter + 1 %}
+
+                        {% for class in date %}
+
+                            <a href="{{ class.getLink() }}">{{ class.toString() }}</a> <br/>
+
+                        {% endfor %}
+                    </div>
+                </td>
+
+            {% endfor %}
+            </tr>
+    </table>
+{% endblock %}

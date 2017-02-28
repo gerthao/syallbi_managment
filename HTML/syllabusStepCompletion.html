@@ -1,0 +1,147 @@
+{% extends "syllabusStepMaster.html" %}
+
+{% block title %}Confirm Your Syllabus{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../css/syllabusStep/completionStyle.css">
+{% endblock %}
+
+{% block content %}
+    <!-- A lot of this would be generated HTML taken from the individual step page functions
+         I won't detail this here, as it would simply be a ton of copy-pasted content from other pages -->
+    <h2 id="courseTitle">
+        {{ syllabus.course.department }} {{ syllabus.course.course }}-00{{ syllabus.course.section_number }}: ClassNameHere {{ syllabus.term.term }} {{ syllabus.term.year }}
+    </h2>
+    <h3>Syllabus {{ syllabus.name }} Status:
+        {% if syllabus.active == true %} Active
+            <form action = "syllabusStepCompletion.html" method="post">
+                <button type="submit" name="toggleActiveStatus" class="btn btn-default" value="False">Deactivate</button>
+            </form>
+        {% endif %}
+        {% if syllabus.active == false %} Inactive
+            <form action = "syllabusStepCompletion.html" method="post">
+                <button type="submit" name="toggleActiveStatus" class="btn btn-default" value="True">Activate</button>
+            </form>
+        {% endif %}
+    </h3>
+
+    <div id="textbooksHTML" class="generatedContent text-left">
+        <h1>
+            <form action="textbookLib.html">
+                Textbooks <button type="submit" name="edit" class="btn btn-default">Edit</button>
+            </form>
+        </h1>
+
+        <ul class="list-group">
+            {% for x in syllabus.textbooks %}
+            <li class="list-group-item text-left">{{ x.title }} by {{ x.author }}; ISBN: {{ x.ISBN }}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div id="professorTATableHTML" class="generatedContent text-left">
+            <h1>
+                <form action="/syllabusStepInstructor.html">
+                    Instructor Information <button type="submit" name="edit" class="btn btn-default">Edit</button>
+                </form>
+            </h1>
+                <table class="table text-center">
+                    <tr class="header">
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Phone</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Office Location</th>
+                        <th class="text-center">Office Hours</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                        {% for x in syllabus.Instructors %}
+                        <tr class = "InstructorType{{ x.name }}">
+                            <td> {{ x.name }} </td>
+                            <td> {{ x.phone }} </td>
+                            <td> {{ x.email }} </td>
+                            <td> {{ x.officeLocation }} </td>
+                            <td> {{ x.officeHours }} </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+    </div>
+
+    <div id="policiesHTML" class="generatedContent text-left">
+        <h1>
+            <form action="syllabusStepPoliciesEditor.html">
+                Policies <button type="submit" name="edit" class="btn btn-default">Edit</button>
+            </form>
+        </h1>
+        {% for x in policies %}
+            <h4> {{ x.head }}</h4>
+            <ul class="list-group text-center">
+                <li class="list-group-item"> {{ x.body }} </li>
+            </ul>
+        {% endfor %}
+    </div>
+
+    <div id="assessmentHTML" class="generatedContent text-left">
+        <h1>
+            <form action="syllabusStepAssessment.html">
+                Assessments <button type="submit" name="edit" class="btn btn-default">Edit</button>
+            </form>
+        </h1>
+    <table class="table text-center">
+        <tr class="header">
+            <th class="text-center">Assessment Type</th>
+            <th class="text-center">Percentage</th>
+            <th class="text-center">Description</th>
+        </tr>
+
+        {% for x in syllabus.assessments %}
+        <tr class = "header{{ x.name }}">
+            <td> {{ x.name }} </td>
+            <td> {{ x.percent }} </td>
+            <td> {{ x.description }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    <div id="gradingHTML" class="generatedContent text-left">
+        <h1>
+            <form action="syllabusStepGradeScale.html">
+                Grading Scale <button type="submit" name="edit" class="btn btn-default">Edit</button>
+            </form>
+        </h1>
+        <table class="table text-center">
+            <tr class="header">
+                <th class="text-right">Grade</th>
+                <th class="text-left">Percentage</th>
+            </tr>
+            {% for x in syllabus.gradeScale %}
+                <tr>
+                <th class="text-right">{{ x.name }}</th>
+                <th class="text-left">{{ x.percentRange }}</th>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div id="calendarHTML" class="generatedContent">
+        <button class="btn btn-default buttonEditContent">
+            Edit
+        </button>
+        <span>Your course calendar HTML would be placed here by jinja.  </span>
+    </div>
+
+    <form action="/{{session['username']}}/{{ syllabus.term.term }}{{ syllabus.term.year }}/{{ syllabus.course.department}}{{ syllabus.course.course_number }}/{{ syllabus.course.section_number }}/{{ syllabus.name }}" class="completionForm">
+        <button id="completeSyllabus" class="btn btn-block btn-default" type="submit">
+            View as published formatted Syllabus
+        </button>
+    </form>
+    <!-- fill in this link eventually-->
+    <form action="syllabusStepCalendar.html" class="completionForm">
+        <button id="goBack" class="btn btn-block btn-default" type="submit">
+            Go Back
+        </button>
+    </form>
+
+{% endblock %}
