@@ -1,0 +1,144 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Create Your Course Calendar</title>
+    <meta name="description" content="Syllabus Step Calendar">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/syllabusStep/calendarStyle.css">
+
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+
+    <div class="borderedHolder solidBackground leftText stepContainer">
+
+        <div id="yourContentHere">
+
+            <h1 class="centeredText">Course Calendar</h1>
+            <table class="table">
+                <!-- still debating div or regular tables -->
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th></th>
+                    <!-- Change this href once syllabus process has a page -->
+                    <th>
+                    </th>
+                </tr>
+                <tr>
+                    <td>9/9/2020</td>
+                    <td>Macro processor introduction</td>
+                    <td><button class="btn btn-default">Edit Date</button></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                Delete Date
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10/10/2020</td>
+                    <td>Macro processor interpretive dance lessons</td>
+                    <td><button class="btn btn-default">Edit Date</button></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                Delete Date
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10/11/2020</td>
+                    <td>Reflections on WWIII- an interview with a macro processor</td>
+                    <td><button class="btn btn-default">Edit Date</button></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                Delete Date
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10/12/2020</td>
+                    <td>What is a prototype?  We just don't know.</td>
+                    <td><button class="btn btn-default">Edit Date</button></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                Delete Date
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <form class="rightText">
+                            <button class="btn btn-block btn-default">
+                                Add a Date
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+            <form action="syllabusStepCompletion.html" class="completionForm">
+                <button class="btn btn-default btn-block">Save &amp Continue</button>
+            </form>
+
+            <!-- fill in this link eventually-->
+            <form action="syllabusStepPoliciesEditor.html" class="completionForm">
+                <button id="goBack" class="btn btn-block btn-default" type="submit">
+                    Go Back
+                </button>
+            </form>
+
+        </div>
+
+
+        <div class="progressBar centeredText">
+            <!-- This will eventually use templating to be populated -->
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/empty.png">
+            <img class="barIcon" src="../content/progressbarsample/empty.png">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

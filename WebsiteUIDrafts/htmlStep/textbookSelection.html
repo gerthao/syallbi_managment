@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Textbook Selection</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/textbookSelection/textbookSelection.css" rel="stylesheet" >
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Textbook Selection</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Go To...<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Assessments</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Course Selection</a></li>
+                        <li><a href="#">Grading Scale</a></li>
+                        <li><a href="#">Policies</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Select Term<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Terms</li>
+                        <li><a href="#">Fall 2015</a></li>
+                        <li><a href="#">Summer 2015</a></li>
+                        <li><a href="#">Spring 2015</a></li>
+                        <li><a href="#">Winter 2014</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Older Terms</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Selected Term: Selected Course</h1>
+    </div>
+
+    <div class="row">
+        <div>
+            <a href="#" class="btn btn-default">Select All</a>
+            <a href="#" class="btn btn-default">Clear All</a>
+            <a href="#" class="btn btn-default">Delete Selected</a>
+            <a href="#" class="btn btn-default">Import Settings From Other Courses/Terms</a>
+            <a href="#" class="btn btn-default">Save Settings</a>
+        </div>
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">CS150</a></li>
+            <li role="presentation"><a href="#">CS250</a></li>
+            <li role="presentation"><a href="#">CS361</a></li>
+            <li role="presentation"><a href="#">CS481</a></li>
+        </ul>
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">
+                        Essential Skills for the Agile Developer, Shalloway, Addison-Wessley Professional, ISBN: 0785342543735
+                    </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">
+                        More Essential Skills for the Agile Developer, Shalloway, Addison-Wessley Professional, ISBN: 0785342543735
+                    </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">
+                        Even More Essential Skills for the Agile Developer, Shalloway, Addison-Wessley Professional, ISBN: 0785342543735
+                    </label>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">
+                        More Than Even More Essential Skills for the Agile Developer, Shalloway, Addison-Wessley Professional, ISBN: 0785342543735
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Add New</button>
+            </span>
+                <input type="text" class="form-control" placeholder="Textbook">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Search</button>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

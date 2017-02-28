@@ -1,0 +1,18 @@
+Changelog
+
+1.) Added calendar page
+    - Import other calendars supported
+    - Can switch to weekly/daily views
+2.) Added schedule page
+3.) Improved edit and delete functionality coverage
+    - Delete syllabus from management page added
+    - Delete/Edit for assessments added in assessment step page
+    - Delete/Edit for instructors added in instructor step page
+    - Delete added grade step page
+    - Delete added in textbook step page
+    - Delete added in calendar step page
+4.) Added UI improvements
+5.) Generate URLs for active syllabuses
+6.) CSS guideline for syllabus view
+7.) View syllabus button added to management page
+8.) Viewable syllabus available if active with generated URL

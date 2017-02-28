@@ -1,0 +1,21 @@
+.stepBackground {
+    background: white no-repeat center center fixed;
+    background-size: cover;
+}
+
+.stepContainer {
+    margin-top: 150px;
+}
+
+.barIcon {
+    width: 50px;
+    margin: 0;
+}
+
+#yourContentHere{
+    margin-bottom: 50px;
+}
+
+.completionForm{
+    margin:5px;
+}

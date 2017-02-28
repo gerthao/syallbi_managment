@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment</title>
+    <meta name="description" content="Assessment Page">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/assessment/assessment.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="backgroundHolder">
+
+    <div class="borderedHolder solidBackground centeredText stepContainer">
+
+        <div id="yourContentHere">
+            <br>
+            <div class="borderedHolder centeredText assessBox">
+                <h1>Assessments</h1>
+                <table class="table">
+                    <tr class="header">
+                        <th class="text-center">Assessment Type</th>
+                        <th class="text-center">Percentage</th>
+                        <th class="text-center">Description</th>
+                        <th></th>
+                        <th>
+                            <form>
+                                <button class="btn btn-block btn-default">
+                                    <img class="addRemButton" src="../content/assessment/plusIcon.png"/>
+                                    New Type
+                                </button>
+                            </form>
+                        </th>
+                    </tr>
+                    <tr class="project">
+                        <td>Example : Project</td>
+                        <td>40%</td>
+                        <td>The course project is implemented in phases by small groups of students.
+                            There are several phases of creating and refining deliverables such as requirements specifications, design documents, etc.</td>
+                        <td>
+                            <form action="#delete">
+                                <button class="btn btn-default">
+                                    Edit
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <button class="btn btn-default">
+                                    <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                                    Remove Type
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr class="quizzes">
+                        <td>Quizzes</td>
+                        <td>10%</td>
+                        <td>Online quizzes will be posted in D2L. You may take each quiz up to 2 times.
+                            The score of the best attempt is recorded in the grade book.
+                            Unannounced quizzes in lecture are given to assess comprehension of concepts from the previous assignment, encourage attendance, and give you feedback about your progress.
+                            The low score will be dropped.</td>
+                        <td>
+                            <form action="#delete">
+                                <button class="btn btn-default">
+                                    Edit
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <button class="btn btn-default">
+                                    <img class="addRemButton" src="../content/assessment/minusIcon.png"/>
+                                    Remove Type
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+                <form action="syllabusStepGradeScale.html" class="completionForm">
+                    <button class="btn btn-default btn-block">Save &amp Continue</button>
+                </form>
+
+                <form action="syllabusStepTextbookSelection.html" class="completionForm">
+                    <button id="goBack" class="btn btn-block btn-default" type="submit">
+                        <img class="addRemButton" src="../content/icons/backIcon.png">
+                        Go Back
+                    </button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

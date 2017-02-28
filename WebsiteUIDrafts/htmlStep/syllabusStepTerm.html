@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Template</title>
+    <meta name="description" content="Syllabus Step Template">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+
+    <div class="borderedHolder centeredText stepContainer">
+
+        <div id="yourContentHere">
+
+            <h1>Select Course Term</h1>
+
+            <!--Select School -->
+            <!--Select Year -->
+            <div class="bottom-pad">
+                <form action="placeholder.html" method="post">
+                    <div class="col-sm-6">
+                        <h3>Year</h3>
+                        <label><select>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                        </select></label>
+                    </div>
+                    <div class="col-sm-6">
+                        <h3>Term</h3>
+                        <label><select>
+                            <option value="winter">Winter</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                        </select></label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <form action="StepsCourseSelection.html">
+            <button class="btn btn-block btn-default">
+                Next
+            </button>
+        </form>
+        <br>
+        <div class="progressBar centeredText">
+            <!-- This will eventually use templating to be populated -->
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/empty.png">
+            <img class="barIcon filled" src="../content/progressbarsample/empty.png">
+            <img class="barIcon" src="../content/progressbarsample/empty.png">
+            <img class="barIcon" src="../content/progressbarsample/empty.png">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

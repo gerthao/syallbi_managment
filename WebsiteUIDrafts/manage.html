@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Management Page">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/manage/manage.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <!-- Be sure to change the active class if you copy this to your page -->
+            <li class="active"><a href="manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="backgroundHolder manageBackground">
+
+    <div class="borderedHolder solidBackground manageBox leftText">
+        <h1 class="centeredText">Current Syllabus</h1>
+        <table class="table">
+            <!-- still debating div or regular tables -->
+            <tr>
+                <th>Course Name</th>
+                <th>Date Last Edited</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>My Class</td>
+                <td>9/9/2020</td>
+                <td>
+                    <form>
+                        <label>Active<input type="radio" name="enabled" value="true" checked="checked"></label>
+                        <label>Inactive<input type="radio" name="enabled" value="false"></label>
+                    </form>
+                </td>
+                <td><button class="btn btn-default">Edit</button></td>
+                <td>
+                    <form action="#delete">
+                        <button class="btn btn-block btn-default">Delete
+                            Syllabus
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Another Class</td>
+                <td>10/11/2021</td>
+                <td>
+                    <form>
+                        <label>Active<input type="radio" name="enabled" value="true"></label>
+                        <label>Inactive<input type="radio" name="enabled" value="false" checked="checked"></label>
+                    </form>
+                </td>
+                <td><button class="btn btn-default">Edit</button></td>
+                <td>
+                    <form action="#delete">
+                        <button class="btn btn-block btn-default">Delete
+                            Syllabus
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <form action="htmlStep/syllabusStepTerm.html">
+                        <button class="btn btn-block btn-default">
+                            Add a Syllabus
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

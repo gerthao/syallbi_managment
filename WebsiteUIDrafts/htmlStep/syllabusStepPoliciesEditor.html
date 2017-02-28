@@ -1,0 +1,134 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Edit Your Policies</title>
+    <meta name="description" content="Syllabus Step Policy Editor">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/syllabusStep/policyStyle.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+
+    <div class="borderedHolder solidBackground centeredText stepContainer">
+
+        <div id="yourContentHere">
+
+            <h1>Edit Policies</h1>
+
+            <div class="leftText">
+
+                <button class="btn btn-block btn-default">
+                    Regenerate University Policies
+                </button>
+
+                <div class="policyGroup">
+                    <form class="form-inline policyHeader" action="#headerForm">
+                        Header
+                        <button class="btn btn-default">
+                            Edit
+                        </button>
+                        <button class="btn btn-default">
+                            Remove This Policy
+                        </button>
+                    </form>
+                    <textarea class="form-control" rows="2" placeholder="A header for this policy grouping" required
+                              disabled>University Mug Policy</textarea>
+
+                    <form class="form-inline policyHeader" action="#headerForm">
+                        Body
+                        <button class="btn btn-default">
+                            Edit
+                        </button>
+                    </form>
+                    <textarea class="form-control" rows="4" placeholder="A header for this policy grouping" required
+                              disabled>Under no condition are mugs allowed on campus.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consectetur vehicula urna non accumsan. Vivamus ut nisi ultricies leo venenatis ultrices. Fusce vitae efficitur turpis. Suspendisse potenti. Phasellus dignissim neque quis urna blandit rhoncus. Donec efficitur sagittis neque id imperdiet. Pellentesque blandit diam mi, lacinia tristique mauris ornare non. Maecenas mollis dui at mauris euismod ultricies sed vitae dui. Ut pulvinar feugiat leo sit amet pellentesque. In hac habitasse platea dictumst. Suspendisse ac augue a lectus condimentum feugiat. Vestibulum eget quam a nisl viverra rhoncus id non ipsum. Aenean non placerat lectus, eget ornare ligula. Donec tristique magna purus, vitae molestie lacus pellentesque ut. Mauris pharetra urna eu velit congue ornare. </textarea>
+                </div>
+
+                <div class="policyGroup">
+                    <form class="form-inline policyHeader" action="#headerForm">
+                        Header
+                        <button class="btn btn-default">
+                            Edit
+                        </button>
+                        <button class="btn btn-default">
+                            Remove This Policy
+                        </button>
+                    </form>
+                    <textarea class="form-control" rows="2" placeholder="A header for this policy grouping" required
+                              disabled>University Øl Policy</textarea>
+
+                    <form class="form-inline policyHeader" action="#headerForm">
+                        Body
+                        <button class="btn btn-default">
+                            Edit
+                        </button>
+                    </form>
+                    <textarea class="form-control" rows="4" placeholder="A header for this policy grouping" required
+                              disabled>Students must drink øl before all classes.  It enhances the learning experience.  Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok. Lorem Ipsum har tålt tidens tann usedvanlig godt, og har i tillegg til å bestå gjennom fem århundrer også tålt spranget over til elektronisk typografi uten vesentlige endringer. Lorem Ipsum ble gjort allment kjent i 1960-årene ved lanseringen av Letraset-ark med avsnitt fra Lorem Ipsum, og senere med sideombrekkingsprogrammet Aldus PageMaker som tok i bruk nettopp Lorem Ipsum for dummytekst.
+                    </textarea>
+                </div>
+
+            </div>
+
+            <button class="btn btn-default addPolicyButton">
+                Add Another Policy
+            </button>
+
+            <!-- This action should redirect somewhere, but I don't know where yet.  -->
+            <form action="syllabusStepCalendar.html" class="completionForm">
+                <button class="btn btn-block btn-default">Save &amp Continue</button>
+            </form>
+
+            <!-- fill in this link eventually-->
+            <form action="syllabusStepPoliciesPath.html" class="completionForm">
+                <button id="goBack" class="btn btn-block btn-default" type="submit">
+                    Go Back
+                </button>
+            </form>
+
+
+        </div>
+
+
+        <div class="progressBar centeredText">
+            <!-- This will eventually use templating to be populated -->
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/filled.png">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

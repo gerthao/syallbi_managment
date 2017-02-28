@@ -1,0 +1,57 @@
+Kanye West Superfans
+
+GOALS:
+This group is attempting to accomplish the project laid out by the project sponsor.
+
+WORK NORMS:
+Choose tasks on the Kanban Board set up through Trello (See WORKFLOW for process notes).
+Finish before the end of the current sprint.
+
+WORK DELEGATION/WORKLOAD:
+If there are any tasks that a group member would like to work on, they can claim that task. If something goes unassigned, this work will be delegated equally during group meetings.
+
+If a group member feels like they have been assigned too much (or conversely not enough) they can ask for task reassignment from the group during group meetings.
+
+Members whose work is below-par should seek out help from other group members early and often. If group members recognize a struggling member, they should attempt to help as early as possible.  For situations involving frequent low-quality work or lack of commitment, see CONFLICT RESOLUTION.  
+
+
+MEETING NORMS:
+Where: Golda Meir Library
+When: Tuesdays @ 5:30-6pm
+
+Working sessions or additional meetings may be called as needed.
+Meetings may be cancelled after class on Tuesdays but before the normal meeting time if no work is needed. Members who  are not at a class when a meeting is cancelled will be notified within 30 minutes.
+
+If a group member must miss a meeting, that group member should provide at least 24 hours notice. If this is not possible, notify the group as soon as possible and give a basic reason. If a habit of missed meetings or tardiness occurs, other group members will address the situation on a case by case basis.
+
+At the start of meetings group members explain their own goals for the meeting.
+
+DECISION MAKING:
+Majority rules with a goal of consensus
+
+FACILITATION NORMS:
+Round-robin discussion during meetings
+
+COMMUNICATION NORMS:
+Communicate via Slack as a primary source
+Revision control will be handled via GitHub
+Trello will be used to visualize workflow
+
+WORKFLOW:
+Our workflow is defined as:
+Claimable Tasks -> Tasks in Progress -> Tasks in Code Review -> Completed Tasks
+These tasks are defined as follows:
+Claimable Tasks - Tasks that anyone can tag and claim.  After being claimed, tasks turn into "In Progress"
+Tasks in Progress - Tasks that are currently being worked on.  When finished, they enter code review.  
+Tasks in Code Review - These tasks are currently being peer-reviewed for completeness.  If any issues become apparent, the task returns to in-progress.  Otherwise, the task is marked as complete.  
+Completed Tasks - These tasks are done.  They exist for historical reference (or if we need to re-open an issue).  
+
+CONFLICT RESOLUTION
+In the case that a group member is not adhering to group policy or completing their work either up to standard or on time, a group member can initiate a group vote during a weekly group meeting.  A majority vote counts as an offense against the offending group member. The following procedures are used for offenses:
+	First Offense
+		The group member will get a warning via the the mediums outlined in COMMUNICATION NORMS. At the next group meeting, the group will have another vote to decide if the offending group member has caught up/met group standards. If the group votes that the member has not met these standards, that group member will be moved on to their second offense. 
+	Second Offense
+		If the group member fails to comply to group policy twice, they are now under WATCH STATUS. Group members under watch status must give daily reports via group COMMUNICATION NORMS. These reports will contain: what they're working on, what they're stuck on, and what they have finished since their last report. Evidence of any work completed must be committed to the repo on GitHub. This stage allows the rest of the group to ensure that, at least, the offending group member is putting in a real effort.  
+		Group members under watch status can be voted out of it during group meetings. They can also be voted into a third offense, if the other group members feel that they are not putting in reasonable effort. If the group member fails to provide a report, this counts as an offense.  
+	Third Offense
+		Jayson Rock will be contacted via e-mail with the reports (if any) provided by the offending group member. The non-offending group members will also write up a report detailing the offenses of the offending group member.  

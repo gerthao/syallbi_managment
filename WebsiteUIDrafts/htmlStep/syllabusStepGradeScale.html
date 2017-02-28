@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Course Grading Scale</title>
+    <meta name="description" content="Grade Scale">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/syllabusStep/calendarStyle.css">
+
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+
+    <div class="borderedHolder solidBackground leftText stepContainer">
+
+        <div id="yourContentHere">
+
+            <h1 class="centeredText">Course Grade Scale</h1>
+            <table class="table">
+                <!-- still debating div or regular tables -->
+                <tr>
+                    <th>Grade</th>
+                    <th>Percentage</th>
+                    <th>Edit</th>
+                    <!-- Change this href once syllabus process has a page -->
+                    <th>
+                        <form>
+                            <button class="btn btn-block btn-default">
+                                <img class="addRemButton" src="../content/icons/plusIcon.png"/>
+                                New Grade
+                            </button>
+                        </form>
+                    </th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>100% - 90%</td>
+                    <td><img class="addRemButton" src="../content/icons/editIcon.png"/></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                <img class="addRemButton" src="../content/icons/minusIcon.png"/>
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>89% - 80%</td>
+                    <td><img class="addRemButton" src="../content/icons/editIcon.png"/></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                <img class="addRemButton" src="../content/icons/minusIcon.png"/>
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>79% - 70%</td>
+                    <td><img class="addRemButton" src="../content/icons/editIcon.png"/></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                <img class="addRemButton" src="../content/icons/minusIcon.png"/>
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>69% - 55%</td>
+                    <td><img class="addRemButton" src="../content/icons/editIcon.png"/></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                <img class="addRemButton" src="../content/icons/minusIcon.png"/>
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td><55%</td>
+                    <td><img class="addRemButton" src="../content/icons/editIcon.png"/></td>
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                <img class="addRemButton" src="../content/icons/minusIcon.png"/>
+                                Remove
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <!-- still debating div or regular tables -->
+                <tr>
+                    <th>Description:</th>
+                    <!-- Change this href once syllabus process has a page -->
+                    <th>
+                    </th>
+                </tr>
+                <tr>
+                    <td> Grades will be posted on D2l, and there will be no curve. However extra credit will be given to those
+                    who attend a macro processor basket weaving class. In addition, all grading will be taken care of by the TA.</td>
+
+                    <td>
+                        <form action="#delete">
+                            <button class="btn btn-block btn-default">
+                                Edit
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+
+            <form action="syllabusStepPoliciesPath.html" class="completionForm">
+                <button class="btn btn-default btn-block">Save &amp Continue</button>
+            </form>
+
+            <!-- fill in this link eventually-->
+            <form action="syllabusStepAssessment.html" class="completionForm">
+                <button id="goBack" class="btn btn-block btn-default" type="submit">
+                    <img class="addRemButton" src="../content/icons/backIcon.png">
+                    Go Back
+                </button>
+            </form>
+
+        </div>
+
+
+        <div class="progressBar centeredText">
+            <!-- This will eventually use templating to be populated -->
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/empty.png">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.addRemButton {
+    width: 20px;
+}
+
+.addRemButton:hover {
+    cursor: pointer;
+}
+
+.manageBox {
+    margin-top: 150px;
+}
+
+.manageBackground {
+    background: white no-repeat center center fixed;
+    background-size: cover;
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Policy Setup</title>
+    <meta name="description" content="Syllabus Step Policy Setup">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/syllabusStep/policyStyle.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+
+    <div class="borderedHolder solidBackground centeredText stepContainer">
+
+        <div id="yourContentHere">
+
+            <h1>How do you want to set your course policies?</h1>
+
+            <!-- Eventually, picking one of these will effect how the editor is initialized -->
+            <form action="syllabusStepPoliciesEditor.html" class="policyForm">
+                <button class="btn btn-block btn-default buttonPolicy"><h2>I want to create a new policy from scratch.</h2></button>
+                <button class="btn btn-block btn-default buttonPolicy"><h2>I want to start with or use an existing policy.</h2>
+                </button>
+            </form>
+
+            <!-- fill in this link eventually-->
+            <form action="syllabusStepGradeScale.html" class="completionForm">
+                <button id="goBack" class="btn btn-block btn-default" type="submit">
+                    Go Back
+                </button>
+            </form>
+        </div>
+
+
+        <div class="progressBar centeredText">
+            <!-- This will eventually use templating to be populated -->
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/empty.png">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

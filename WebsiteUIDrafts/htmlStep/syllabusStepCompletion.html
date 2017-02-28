@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Confirm Your Syllabus</title>
+    <meta name="description" content="Syllabus Step Completion">
+    <meta name="author" content="KWSF">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/syllabusStep/baseStyle.css">
+    <link rel="stylesheet" href="../css/syllabusStep/completionStyle.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!--[if lt IE 9]>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="../manage.html">Management</a></li>
+            <!-- Might have to update this href after the policy library page is made -->
+            <li><a href="../policyLib.html">Policy Library</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a>Welcome, [Username]!</a></li>
+            <li><a href="../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="backgroundHolder stepBackground">
+
+    <div class="borderedHolder solidBackground centeredText stepContainer">
+
+        <div id="yourContentHere">
+
+            <h1>Confirm Your Syllabus</h1>
+
+            <!-- A lot of this would be generated HTML taken from the individual step page functions
+                 I won't detail this here, as it would simply be a ton of copy-pasted content from other pages -->
+            <h2 id="courseTitle" class="generatedContent">Your Course Title Would Go Here</h2>
+
+            <div id="professorTATableHTML" class="generatedContent">Your generated TA/Professor table would go here
+            </div>
+
+            <div id="policiesHTML" class="generatedContent">
+                <button class="btn btn-default buttonEditContent">
+                    Edit
+                </button>
+                <span>Your generated policies HTML would be placed here by jinja.  </span>
+            </div>
+
+            <div id="assessmentHTML" class="generatedContent">
+                <button class="btn btn-default buttonEditContent">
+                    Edit
+                </button>
+                <span>Your assessment HTML would be placed here by jinja.  </span>
+            </div>
+
+            <div id="gradingHTML" class="generatedContent">
+                <button class="btn btn-default buttonEditContent">
+                    Edit
+                </button>
+                <span>Your grading HTML would be placed here by jinja.  </span>
+            </div>
+
+            <div id="textbookHTML" class="generatedContent">
+                <button class="btn btn-default buttonEditContent">
+                    Edit
+                </button>
+                <span>Your textbook HTML would be placed here by jinja.  </span>
+            </div>
+
+            <div id="calendarHTML" class="generatedContent">
+                <button class="btn btn-default buttonEditContent">
+                    Edit
+                </button>
+                <span>Your course calendar HTML would be placed here by jinja.  </span>
+            </div>
+
+            <form action="../manage.html" class="completionForm">
+                <button id="completeSyllabus" class="btn btn-block btn-default" type="submit">Save & Return to
+                    Syllabus Manager
+                </button>
+            </form>
+            <!-- fill in this link eventually-->
+            <form action="syllabusStepCalendar.html" class="completionForm">
+                <button id="goBack" class="btn btn-block btn-default" type="submit">
+                    Go Back
+                </button>
+            </form>
+        </div>
+
+
+        <div class="progressBar centeredText">
+            <!-- This will eventually use templating to be populated -->
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon filled" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/filled.png">
+            <img class="barIcon" src="../content/progressbarsample/filled.png">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
