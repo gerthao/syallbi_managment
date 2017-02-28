@@ -1,0 +1,63 @@
+.pageContainer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.bookTitle {
+    font-style: italic;
+}
+
+.instructorTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.instructorHeader {
+    text-align: left;
+}
+
+.instructorCell {
+    border: 1px solid black;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.assessmentTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.assessmentCell {
+    border: 1px solid black;
+}
+
+.gradeScaleCell {
+    font-weight: bold;
+}
+
+.policyHeader {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.policyBody {
+    margin-top: 0;
+}
+
+.calendarTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.calendarHeader {
+    border: 1px solid black;
+    text-align: left;
+}
+
+.calendarCell {
+    border: 1px solid black;
+}

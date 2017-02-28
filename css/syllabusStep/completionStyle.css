@@ -1,0 +1,13 @@
+.generatedContent{
+    margin-top:100px;
+    border: 1px solid white;
+    min-height: 100px;
+}
+
+.buttonEditContent{
+    float:left;
+}
+
+#completeSyllabus{
+    margin-top:50px;
+}

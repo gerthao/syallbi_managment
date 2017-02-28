@@ -1,0 +1,47 @@
+.buttonPolicy {
+    margin-top: 10px;
+}
+
+.policyHeader {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.policyGroup {
+    margin-top: 100px;
+}
+
+.addPolicyButton {
+    margin: 50px;
+}
+
+.policyForm {
+    margin-bottom: 100px;
+}
+
+.backgroundHolder {
+    background: url('../../content/kanye-west-covers-xxl-rosewood.jpg') no-repeat right bottom fixed;
+    background-size: 30%;
+}
+
+.bottomButton {
+    margin-bottom: 100px;
+}
+
+.importBox {
+    display: inline-block;
+    width: 49%;
+}
+
+.newBox {
+    display: inline-block;
+    width: 49%;
+}
+
+.policyControl {
+    width: 100%;
+}
+
+.stepContainer {
+    max-width: 1000px;
+}

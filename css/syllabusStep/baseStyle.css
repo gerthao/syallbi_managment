@@ -1,0 +1,38 @@
+.backgroundHolder {
+    background: url('../../content/kanye-west-covers-xxl-rosewood.jpg') no-repeat right bottom fixed;
+    background-size: 30%;
+}
+
+.stepContainer {
+    margin-top: 155px;
+}
+
+.barIcon {
+    width: 50px;
+    margin: 0;
+}
+
+#yourContentHere {
+    margin-bottom: 50px;
+}
+
+.completionForm {
+    margin: 5px;
+}
+
+.barIcon {
+    margin-top: 25px;
+}
+
+.backgroundHolder {
+    background: url('../../content/kanye-west-covers-xxl-rosewood.jpg') no-repeat right bottom fixed;
+    background-size: 30%;
+}
+
+h1 {
+    margin-top:100px;
+}
+
+.marginOverride {
+    margin-top: 50px;
+}
